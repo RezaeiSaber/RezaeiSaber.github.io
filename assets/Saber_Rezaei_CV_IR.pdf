@@ -1,0 +1,160 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Theme selection
+\moderncvstyle{banking} % Style options: casual, classic, banking, oldstyle
+\moderncvcolor{blue}  % Color options: blue, orange, green, red, purple
+
+% Packages
+\usepackage[scale=0.85]{geometry} % Adjust page margins
+\usepackage[unicode]{hyperref} % For clickable links
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{academicons}
+
+% Personal data
+\name{Saber}{Rezaei}
+\address{ Niazi St, Bagheri Highway 1665876754 }{Tehran, Iran}
+\phone[mobile]{+98 936 750 7102}
+\email{Saber.Rezaeiust@gmail.com}
+\social[linkedin]{saber-rezaei}
+\social[github]{RezaeiSaber}
+\homepage{rezaeisaber.github.io}
+
+
+\begin{document}
+	\makecvtitle
+	
+% --------------------- Education ---------------------
+\section{Education}
+
+\cventry{2022--2025}{M.Sc. in Biomedical Engineering – Neurocognitive Engineering}{Iran University of Science and Technology (IUST)}{Iran}{}{}
+{GPA: 17.65/20 | QS World University Ranking (2024): \#436}
+
+\vspace{2mm} % Adjust the space as needed
+
+\cventry{2015--2020}{B.Sc. in Electrical Engineering}{University of Semnan}{Iran}{}{}
+
+	% --------------------- Research Experience ---------------------
+	\section{Research Experience}
+	\cventry{2023--2025}{Full-Time Researcher}{Iran Neural Technology Centre}{}{}{
+		\begin{itemize}
+			\item Developed a Brain-Computer Interface (BCI) system for detecting hand movement intentions using EEG artifacts, specifically designed for spinal cord injury and stroke patients.
+			\item Engineered a real-time Functional Electrical Stimulation (FES) system that translates EEG signals into hand gestures for functional motor recovery in patients with motor impairments.
+			\item Performed EEG/EMG data acquisition and applied advanced signal processing techniques.
+			\item Implemented deep learning techniques for EEG/EMG signal classification and prediction.
+	\end{itemize}}
+
+		% --------------------- Skills ---------------------
+\section{Skills}
+\begin{multicols}{2}
+	\raggedright
+	\textbf{Experimental:}
+	\begin{itemize}
+		\item EEG/EMG data acquisition
+		\item Clinical trial management
+		\item Patient interaction\\[0.3cm]
+	\end{itemize}
+	
+	\textbf{Analysis:}
+	\begin{itemize}
+		\item Signal Processing
+		\item Statistical Analysis
+		\item Brain Connectivity Analysis
+	\end{itemize}
+	
+	\columnbreak
+	\textbf{Programming/Toolbox:}
+	\begin{itemize}
+		\item MATLAB
+		\item Python
+		\item Machine Learning
+		\item Deep Learning
+		\item EEGLAB
+		\item MNE Python
+		\item Hermes
+		\item Fieldtrip
+	\end{itemize}
+\end{multicols}
+
+		% --------------------- Research Interests ---------------------
+	\section{Research Interests}
+	\begin{multicols}{2}
+		\begin{itemize}
+			\item EEG/EMG Signal Processing
+			\item Brain-Computer Interface
+			\item Brain Connectivity Analysis
+			\item Rehabilitation
+			\item Neuroscience
+			\item Psychological Applications of EEG
+		\end{itemize}
+	\end{multicols}
+
+	% --------------------- Publications ---------------------
+	\section{Publications}
+	
+	\subsection{Published}
+	\cvitem{}{[1] A. Karamali, A. Daeichian, S. Rezaei, \textit{Using Long Short-Term Memory Networks as Virtual Wind Direction Sensors for Improved Wind Farm Turbines Orientation}, 2024 9th International Conference on Technology and Energy Management (ICTEM), 1-5. \texttt{https://doi.org/10.1109/ICTEM60690.2024.10631987}.}  
+	
+	\vspace{0.2cm}
+	
+	\cvitem{}{[2] A. H. Karamali, A. Daeichian, S. Rezaei, A. Reihanian, \textit{Assessing Wind Energy Potential in Markazi Province, Iran: A Data-Driven Approach with AI Algorithms}, \textit{Journal of Green Energy Research and Innovation}, (2025). \texttt{doi: 10.61186/jgeri.2025.2048014.1032}.}
+	
+	\vspace{0.5cm}
+	
+	\subsection{Under Review and In Preparation}
+	
+	\cvitem{}{[1] S. Rezaei, N. Parmeh, V. Rajabpour, F. Rahimi, \textit{A Machine Learning Approach to Detection of Claustrophobic Patients using Electroencephalographic Activity}, 2025, \texttt{doi:...}.}
+	
+	\vspace{0.2cm}
+	
+	\cvitem{}{[2] S. Rezaei, E. Shakeri, F. Farkhondeh Tale Navi, S. Heysieattalab, \textit{Resting-state EEG Power Spectral Density Predicts Risk-taking Brain Activity in Managers}, 2025, \texttt{doi:...}.}
+	
+	\vspace{0.2cm}
+	
+	\cvitem{}{[3] A. H. Karamali, M. R. Moghadasian, A. R. Danesh, M. Kalantar, S. Rezaei, \textit{Enhancing Wind Power Forecasting through a Hybrid Deep Learning Approach: Long Short-Term Memory Integrated with Attention Mechanism}, \textit{The 12th Iranian Conference on Renewable Energy \& Distributed Generation (ICREDG2025)}, 26 February, QUT, Iran. \texttt{doi:...}.}
+	
+	% --------------------- Honors & Awards ---------------------
+	%\section{Honors \& Awards}
+	%\cvitem{}{- Top 4\% rank in the Master's entrance exam (408/10257)}
+	%\cvitem{}{- Top 10\% rank in the Bachelor's entrance exam}
+	%\cvitem{}{- Full-Funded UNHCR Scholarship during undergraduate studies}
+	%\cvitem{}{- 20\% Tuition Fee Waiver during Bachelor's and Master's Studies}
+	
+	% --------------------- Teaching Experience ---------------------
+	\section{Teaching Experience}
+	\cventry{Oct-Dec 2017}{Teaching Assistant - Engineering Mathematics}{Semnan University}{}{}{Assisted with solving problems, grading assignments, and leading review sessions for students}
+	\cventry{Oct-Dec 2018}{Teaching Assistant - Signal and System Analysis}{Semnan University}{}{}{Graded assignments, gave extra practice problems, and held help sessions for students.}
+	
+		
+
+	% --------------------- Language Skills ---------------------
+	\section{Language Skills}
+	
+	\cvitemwithcomment{Persian}{Native}{}
+	\cvitemwithcomment{English}{TOEFL (Planned: June 2025)}{}
+
+	
+	% --------------------- References ---------------------
+\section{References}
+\cvitem{}{
+	\textbf{Dr. Ehsan Darestani Farahani} \\ 
+	Assistant Professor \\ 
+	Email: \href{mailto:ed_farahani@iust.ac.ir}{ed\_farahani@iust.ac.ir} \\ 
+	Phone: \texttt{+98 21 7322 5753} \\[0.3cm] 
+}
+
+\cvitem{}{
+	\textbf{Dr. Fariborz Rahimi} \\ 
+	Assistant Professor \\ 
+	Email: \href{mailto:frahimi@ubonab.ac.ir}{frahimi@ubonab.ac.ir} \\ 
+	Phone: \texttt{+98 41 3774 3803} \\[0.3cm]
+}
+
+\cvitem{}{
+	\textbf{Dr. Abolghasem Daeichian} \\ 
+	Associate Professor \\ 
+	Email: \href{mailto:a-daeichian@araku.ac.ir}{a-daeichian@araku.ac.ir} \\ 
+	Phone: \texttt{+98 86 3262 5436}% \\[0.3cm]
+}
+
+\end{document}
