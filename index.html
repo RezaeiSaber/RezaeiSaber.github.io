@@ -29,6 +29,9 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/virtual.css">
   
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+ 
 </head>
 <body class="theme-red">
   
@@ -276,81 +279,98 @@
   <div class="vg-page page-portfolio" id="portfolio">
     <div class="container">
       <div class="text-center wow fadeInUp">
-        <div class="badge badge-subhead">Lab Experience</div>
-      </div>
-      <h1 class="text-center fw-normal wow fadeInUp">Gallery</h1>
-      <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
+        <div class="badge badge-subhead" style="font-size: 25px; font-weight: bold;">Gallery</div>
+    </div>
+    
+      <!-- <h1 class="text-center fw-normal wow fadeInUp">Gallery</h1> -->
+      <!-- <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
         <button class="btn btn-theme-outline selected" data-filter="*">All</button>
         <button class="btn btn-theme-outline" data-filter=".apps">tab1</button>
         <button class="btn btn-theme-outline" data-filter=".template">tab2</button>
         <button class="btn btn-theme-outline" data-filter=".ios">tab3</button>
         <button class="btn btn-theme-outline" data-filter=".ui-ux">tab4</button>
         <button class="btn btn-theme-outline" data-filter=".graphic">tab5</button>
-        <button class="btn btn-theme-outline" data-filter=".wireframes">tab6</button>
+        <button class="btn btn-theme-outline" data-filter=".wireframes">tab6</button> -->
       </div>
 
       <div class="gridder my-3">
+        <!-- Row 1: Lab and EEG Session -->
         <div class="grid-item apps wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/work-1.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Mobile Travel App</h5> <p>Travel, Discovery</p>">
-            <img src="../assets/img/work/work-1.jpg" alt="">
-            <div class="img-caption">
-              <h5 class="fg-theme">Mobile Travel App</h5>
-              <p>Travel, Discovery</p>
+            <div class="img-place" data-src="../assets/img/work/me at lab.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Me At INTC Lab</h5> <p>Barin Connectivity</p>">
+                <img src="../assets/img/work/me at lab.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">Me At INTC Lab</h5>
+                    <p>EEG data analysis</p>
+                </div>
             </div>
-          </div>
         </div>
+    
         <div class="grid-item template wireframes wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/work-2.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Music App</h5> <p>Musics</p>">
-            <img src="../assets/img/work/work-2.jpg" alt="">
-            <div class="img-caption">
-              <h5 class="fg-theme">Music App</h5>
-              <p>Musics</p>
+            <div class="img-place" data-src="../assets/img/work/my subject.jpg" data-fancybox data-caption="<h5 class='fg-theme'>EEG Recording Session</h5> <p>The subject is resting and waiting to drink water.</p>">
+                <img src="../assets/img/work/my subject.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">EEG Recording Session</h5>
+                    <p>The Subject</p>
+                </div>
             </div>
-          </div>
         </div>
+    
+        <!-- Row 2: FNIRS Task and Brain Mapping Lab -->
         <div class="grid-item apps ios wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/work-3.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Games, Streaming</p>">
-            <img src="../assets/img/work/work-3.jpg" alt="">
-            <div class="img-caption">
-              <h5 class="fg-theme">Gaming Dashboard</h5>
-              <p>Games, Streaming</p>
+            <div class="img-place" data-src="../assets/img/work/me as subject fnirs.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Gaming Dashboard</h5> <p>Me As Subject for FNIRS Task</p>">
+                <img src="../assets/img/work/me as subject fnirs.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">Me As Subject</h5>
+                    <p>At national brain mapping laboratory</p>
+                </div>
             </div>
-          </div>
         </div>
+    
         <div class="grid-item graphic ui-ux wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/work-4.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Drugs Delivery App</h5> <p>Health, Drugs</p>">
-            <img src="../assets/img/work/work-4.jpg" alt="">
-            <div class="img-caption">
-              <h5 class="fg-theme">Drugs Delivery App</h5>
-              <p>Health, Drugs</p>
+            <div class="img-place" data-src="../assets/img/work/national brain mapping lab.jpg" data-fancybox data-caption="<h5 class='fg-theme'>National Brain Mapping Laboratory</h5> <p></p>">
+                <img src="../assets/img/work/national brain mapping lab.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">National Brain Mapping Laboratory</h5>
+                    <p></p>
+                </div>
             </div>
-          </div>
         </div>
+    
+        <!-- Row 3: FES Demo and Python Event -->
         <div class="grid-item apps ios wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/work-5.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Musics Discover</h5> <p>Musics, Dashboard</p>">
-            <img src="../assets/img/work/work-5.jpg" alt="">
-            <div class="img-caption">
-              <h5 class="fg-theme">Musics Discover</h5>
-              <p>Musics, Dashboard</p>
+            <div class="img-place" data-src="../assets/img/work/demonstrating hand gesture fes.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Demonstration of Hand Gesture FES System</h5> <p>Demonstration of the FES system by our team to a high-ranking national official</p>">
+                <img src="../assets/img/work/demonstrating hand gesture fes.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">Demonstration of Hand Gesture FES System</h5>
+                    <p>Demonstration of the FES system by our team to a high-ranking national official</p>
+                </div>
             </div>
-          </div>
         </div>
+    
         <div class="grid-item graphic ui-ux wireframes wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/work-6.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Game Streaming</h5> <p>Games, Streaming</p>">
-            <img src="../assets/img/work/work-6.jpg" alt="">
-            <div class="img-caption">
-              <h5 class="fg-theme">Game Streaming</h5>
-              <p>Games, Streaming</p>
+            <div class="img-place" data-src="../assets/img/work/python event.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Python Event</h5> <p>Presentation of the case study by our team</p>">
+                <img src="../assets/img/work/python event.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">Python Event</h5>
+                    <p>Presentation of the case study by our team</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div> <!-- End gridder -->
-      <div class="text-center wow fadeInUp">
-        <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
-      </div>
+    
+        <!-- Row 4: Additional Python Event -->
+        <div class="grid-item graphic ui-ux wireframes wow zoomIn">
+            <div class="img-place" data-src="../assets/img/work/python event2.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Python Event</h5> <p>A programming event featuring discussions and problem-solving on critical thinking and new perspectives.</p>">
+                <img src="../assets/img/work/python event2.jpg" alt="">
+                <div class="img-caption">
+                    <h5 class="fg-theme">Python Event</h5>
+                    <p>A programming event featuring discussions</p>
+                </div>
+            </div>
+        </div>
+    
     </div>
-  </div> <!-- End Portfolio page -->
-  
+
+
 <!-- Footer -->
 <div class="vg-footer">
   <h1 class="text-center">Contact Information</h1>
@@ -433,6 +453,8 @@
 <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 <script src="../assets/js/google-maps.js"></script>
 <script src="../assets/js/topbar-virtual.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
 </body>
 </html>
