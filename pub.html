@@ -18,6 +18,26 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <title>Publications</title>
+  <style>
+    .publication-box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .publication-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .publication-box h5 {
+      color: #007bff;
+    }
+    .publication-box p {
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 <body class="theme-red">
   <!-- Back to top button -->
@@ -25,7 +45,7 @@
     <span class="ti-arrow-up"></span>
   </div>
 
-  <!-- Basic Bootstrap Navbar -->
+<!-- Basic Bootstrap Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     
@@ -68,41 +88,52 @@
       <div class="wow fadeInUp">
         <h3 class="fg-theme mt-5">Published</h3>
         <hr class="divider">
-        <ul class="list-unstyled">
-          <li class="mb-4">
-            <p>
-              [1] A. Karamali, A. Daeichian, S. Rezaei, <strong>Using Long Short-Term Memory Networks as Virtual Wind Direction Sensors for Improved Wind Farm Turbines Orientation</strong>, 2024 9th International Conference on Technology and Energy Management (ICTEM), 1-5. <a href="https://doi.org/10.1109/ICTEM60690.2024.10631987" target="_blank">https://doi.org/10.1109/ICTEM60690.2024.10631987</a>.
-            </p>
-          </li>
-          <li class="mb-4">
-            <p>
-              [2] A. H. Karamali, A. Daeichian, S. Rezaei, A. Reihanian, <strong>Assessing Wind Energy Potential in Markazi Province, Iran: A Data-Driven Approach with AI Algorithms</strong>, Journal of Green Energy Research and Innovation, (2025). <a href="https://doi.org/10.61186/jgeri.2025.2048014.1032" target="_blank">doi: 10.61186/jgeri.2025.2048014.1032</a>.
-            </p>
-          </li>
-        </ul>
+
+        <!-- Publication Box 1 -->
+        <div class="publication-box wow fadeInUp" onclick="window.open('https://doi.org/10.1109/ICTEM60690.2024.10631987', '_blank');">
+          <h5>Using Long Short-Term Memory Networks as Virtual Wind Direction Sensors for Improved Wind Farm Turbines Orientation</h5>
+          <p><strong>Authors:</strong> A. Karamali, A. Daeichian, S. Rezaei</p>
+          <p><strong>Published in:</strong> 2024 9th International Conference on Technology and Energy Management (ICTEM), 1-5.</p>
+          <p><strong>DOI:</strong> <a href="https://doi.org/10.1109/ICTEM60690.2024.10631987" target="_blank">10.1109/ICTEM60690.2024.10631987</a></p>
+        </div>
+
+        <!-- Publication Box 2 -->
+        <div class="publication-box wow fadeInUp" onclick="window.open('https://jgeri.araku.ac.ir/article_719967.html', '_blank');">
+          <h5>Assessing Wind Energy Potential in Markazi Province, Iran: A Data-Driven Approach with AI Algorithms</h5>
+          <p><strong>Authors:</strong> A. H. Karamali, A. Daeichian, S. Rezaei, A. Reihanian</p>
+          <p><strong>Published in:</strong> Journal of Green Energy Research and Innovation, (2025).</p>
+          <p><strong>DOI:</strong> <a href="https://doi.org/10.61186/jgeri.2025.2048014.1032" target="_blank">10.61186/jgeri.2025.2048014.1032</a></p>
+        </div>
       </div>
 
       <!-- Under Review and In Preparation Section -->
       <div class="wow fadeInUp">
         <h3 class="fg-theme mt-5">Under Review and In Preparation</h3>
         <hr class="divider">
-        <ul class="list-unstyled">
-          <li class="mb-4">
-            <p>
-              [1] S. Rezaei, N. Parmeh, V. Rajabpour, F. Rahimi, <strong>A Machine Learning Approach to Detection of Claustrophobic Patients using Electroencephalographic Activity</strong>, 2025, doi:....
-            </p>
-          </li>
-          <li class="mb-4">
-            <p>
-              [2] S. Rezaei, E. Shakeri, F. Farkhondeh Tale Navi, S. Heysieattalab, <strong>Resting-state EEG Power Spectral Density Predicts Risk-taking Brain Activity in Managers</strong>, 2025, doi:....
-            </p>
-          </li>
-          <li class="mb-4">
-            <p>
-              [3] A. H. Karamali, M. R. Moghadasian, A. R. Danesh, M. Kalantar, S. Rezaei, <strong>Enhancing Wind Power Forecasting through a Hybrid Deep Learning Approach: Long Short-Term Memory Integrated with Attention Mechanism</strong>, The 12th Iranian Conference on Renewable Energy & Distributed Generation (ICREDG2025), 26 February, QUT, Iran. doi:....
-            </p>
-          </li>
-        </ul>
+
+        <!-- Publication Box 3 -->
+        <div class="publication-box wow fadeInUp" onclick="window.open('#', '_blank');">
+          <h5>A Machine Learning Approach to Detection of Claustrophobic Patients using Electroencephalographic Activity</h5>
+          <p><strong>Authors:</strong> S. Rezaei, N. Parmeh, V. Rajabpour, F. Rahimi</p>
+          <p><strong>Status:</strong> Under Review (2025)</p>
+          <p><strong>DOI:</strong> Coming soon...</p>
+        </div>
+
+        <!-- Publication Box 4 -->
+        <div class="publication-box wow fadeInUp" onclick="window.open('#', '_blank');">
+          <h5>Resting-state EEG Power Spectral Density Predicts Risk-taking Brain Activity in Managers</h5>
+          <p><strong>Authors:</strong> S. Rezaei, E. Shakeri, F. Farkhondeh Tale Navi, S. Heysieattalab</p>
+          <p><strong>Status:</strong> Under Review (2025)</p>
+          <p><strong>DOI:</strong> Coming soon...</p>
+        </div>
+
+        <!-- Publication Box 5 -->
+        <div class="publication-box wow fadeInUp" onclick="window.open('#', '_blank');">
+          <h5>Enhancing Wind Power Forecasting through a Hybrid Deep Learning Approach: Long Short-Term Memory Integrated with Attention Mechanism</h5>
+          <p><strong>Authors:</strong> A. H. Karamali, M. R. Moghadasian, A. R. Danesh, M. Kalantar, S. Rezaei</p>
+          <p><strong>Status:</strong> In Preparation</p>
+          <p><strong>Conference:</strong> The 12th Iranian Conference on Renewable Energy & Distributed Generation (ICREDG2025), 26 February, QUT, Iran.</p>
+        </div>
       </div>
     </div>
   </div>
