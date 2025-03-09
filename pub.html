@@ -44,24 +44,6 @@
     .btn-pdf {
       margin-top: 10px;
     }
-    
-    /* PDF.js viewer styles */
-    .pdf-container {
-      width: 100%;
-      height: 600px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    /* Loading spinner */
-    .loading-spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-      color: #007bff;
-    }
   </style>
 </head>
 <body class="theme-red">
@@ -125,28 +107,14 @@
         </div>
 
         <!-- Publication Box 2 -->
-        <div class="publication-box wow fadeInUp" data-abstract="
-
-        This paper investigates the wind energy potential in Markazi Province, Iran, focusing on three cities: Tafresh, Khomein and Saveh. The primary objective of this study is to provide a comprehensive analysis of wind patterns using a combination of statistical approaches and artificial intelligence techniques. Wind data was collected from advanced meteorological stations in these cities over a two-year period (2018–2020), including detailed measurements of wind speed and direction at 10-minute intervals. This high-resolution dataset facilitated an in-depth examination of wind behavior and its suitability for energy production. Statistical analysis was conducted using the Weibull distribution and wind rose diagrams, which provided insights into the wind characteristics and their spatial variations. Additionally, Long Short-Term Memory (LSTM) networks were employed to predict wind speeds and temporal trends. These models effectively captured the complex relationships within the wind data and produced highly accurate forecasts. The comparison of actual and predicted wind rose diagrams demonstrated a strong alignment, validating the reliability of the LSTM-based predictions in reflecting real-world wind patterns. The results of this study demonstrate that combining traditional statistical methods with modern machine learning techniques provides a robust framework for analyzing wind energy potential. By leveraging these tools, the study offers valuable insights for sustainable energy planning and supports informed decision-making for renewable energy investments in Markazi Province.">
+        <div class="publication-box wow fadeInUp" data-abstract="This paper investigates the wind energy potential in Markazi Province, Iran, focusing on three cities: Tafresh, Khomein and Saveh. The primary objective of this study is to provide a comprehensive analysis of wind patterns using a combination of statistical approaches and artificial intelligence techniques. Wind data was collected from advanced meteorological stations in these cities over a two-year period (2018–2020), including detailed measurements of wind speed and direction at 10-minute intervals. This high-resolution dataset facilitated an in-depth examination of wind behavior and its suitability for energy production. Statistical analysis was conducted using the Weibull distribution and wind rose diagrams, which provided insights into the wind characteristics and their spatial variations. Additionally, Long Short-Term Memory (LSTM) networks were employed to predict wind speeds and temporal trends. These models effectively captured the complex relationships within the wind data and produced highly accurate forecasts. The comparison of actual and predicted wind rose diagrams demonstrated a strong alignment, validating the reliability of the LSTM-based predictions in reflecting real-world wind patterns. The results of this study demonstrate that combining traditional statistical methods with modern machine learning techniques provides a robust framework for analyzing wind energy potential. By leveraging these tools, the study offers valuable insights for sustainable energy planning and supports informed decision-making for renewable energy investments in Markazi Province.">
           <h5>Assessing Wind Energy Potential in Markazi Province, Iran: A Data-Driven Approach with AI Algorithms</h5>
           <p><strong>Authors:</strong> A. H. Karamali, A. Daeichian, S. Rezaei, A. Reihanian</p>
           <p><strong>Published in:</strong> Journal of Green Energy Research and Innovation, (2025).</p>
           <p><strong>DOI:</strong> <a href="https://jgeri.araku.ac.ir/article_719967.html" target="_blank">10.61186/jgeri.2025.2048014.1032</a></p>
           <button class="btn btn-primary btn-pdf" data-pdf="assets/pdf/Assessing_Wind.pdf">View PDF</button>
         </div>
-        <div class="publication-box wow fadeInUp" data-abstract="Accurate prediction of wind energy generation
-        plays a vital role in integrating renewable energy sources
-        efficiently into electrical grids. This study explores the use of
-        advanced artificial intelligence methods for forecasting wind
-        power production at two meteorological stations located in
-        Khomein and Saveh, Iran. A new hybrid model is proposed,
-        combining Long Short-Term Memory (LSTM) networks with
-        an attention mechanism. This approach surpasses traditional
-        methods like Random Forest and XGBoost by better capturing
-        intricate temporal dynamics and adjusting to fluctuating wind
-        conditions. The results demonstrate the model's potential to
-        improve grid stability and optimize energy management.
-        ">
+        <div class="publication-box wow fadeInUp" data-abstract="Accurate prediction of wind energy generation plays a vital role in integrating renewable energy sources efficiently into electrical grids. This study explores the use of advanced artificial intelligence methods for forecasting wind power production at two meteorological stations located in Khomein and Saveh, Iran. A new hybrid model is proposed, combining Long Short-Term Memory (LSTM) networks with an attention mechanism. This approach surpasses traditional methods like Random Forest and XGBoost by better capturing intricate temporal dynamics and adjusting to fluctuating wind conditions. The results demonstrate the model's potential to improve grid stability and optimize energy management.">
           <h5>Enhancing Wind Power Forecasting through a Hybrid Deep Learning Approach: Long Short-Term Memory Integrated with Attention Mechanism</h5>
           <p><strong>Authors:</strong> A. H. Karamali, M. R. Moghadasian, A. R. Danesh, M. Kalantar, S. Rezaei</p>
           
@@ -292,30 +260,6 @@
   </div>
 </div>
 
-<!-- Very simple script for PDF viewing -->
-<script>
-  // Get all PDF buttons
-  const pdfButtons = document.querySelectorAll('.btn-pdf');
-  
-  // Get the PDF viewer element
-  const pdfViewer = document.getElementById('pdfViewer');
-  
-  // Add click event listeners to each PDF button
-  pdfButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent triggering the publication box click
-      
-      // Get the PDF file path from the data-pdf attribute
-      const pdfPath = button.getAttribute('data-pdf');
-      
-      // Set the PDF directly in the object tag - maximum speed
-      pdfViewer.setAttribute('data', pdfPath);
-      
-      // Show the modal
-      $('#pdfModal').modal('show');
-    });
-  });
-</script>
   <!-- Scripts -->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
@@ -328,9 +272,6 @@
   <script src="../assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
   <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="../assets/js/topbar-virtual.js"></script>
-  
-  <!-- PDF.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
   
   <!-- Script for Abstract Modal -->
   <script>
@@ -360,131 +301,39 @@
     });
   </script>
   
-  <!-- PDF.js Implementation -->
+  <!-- Simple script for PDF viewing -->
   <script>
-    // Set the PDF.js worker source
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
-    
-    // PDF viewer variables
-    let pdfDoc = null,
-        pageNum = 1,
-        pageRendering = false,
-        pageNumPending = null,
-        scale = 1.5,
-        canvas = document.getElementById('pdf-render'),
-        ctx = canvas.getContext('2d');
-    
-    // Get the loading spinner
-    const loadingSpinner = document.getElementById('loading-spinner');
-    
-    // Function to render a page
-    function renderPage(num) {
-      pageRendering = true;
-      
-      // Show loading spinner while page renders
-      loadingSpinner.style.display = 'block';
-      
-      // Get the page
-      pdfDoc.getPage(num).then(function(page) {
-        // Get viewport of the page at required scale
-        const viewport = page.getViewport({ scale });
-        
-        // Set canvas height and width to match the page
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        
-        // Render PDF page into canvas context
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        
-        const renderTask = page.render(renderContext);
-        
-        // Wait for rendering to finish
-        renderTask.promise.then(function() {
-          pageRendering = false;
-          
-          // Hide loading spinner once rendering is complete
-          loadingSpinner.style.display = 'none';
-          
-          // If there's a page pending, render it
-          if (pageNumPending !== null) {
-            renderPage(pageNumPending);
-            pageNumPending = null;
-          }
-        });
-      });
-      
-      // Update page counters
-      document.getElementById('page-num').textContent = num;
-    }
-    
-    // Function to queue a page for rendering
-    function queueRenderPage(num) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderPage(num);
-      }
-    }
-    
-    // Show previous page
-    document.getElementById('prev-page').addEventListener('click', function() {
-      if (pageNum <= 1) {
-        return;
-      }
-      pageNum--;
-      queueRenderPage(pageNum);
-    });
-    
-    // Show next page
-    document.getElementById('next-page').addEventListener('click', function() {
-      if (pageNum >= pdfDoc.numPages) {
-        return;
-      }
-      pageNum++;
-      queueRenderPage(pageNum);
-    });
-    
-    // Add click event listeners to each PDF button
+    // Get all PDF buttons
     const pdfButtons = document.querySelectorAll('.btn-pdf');
     
+    // Get the PDF viewer element
+    const pdfViewer = document.getElementById('pdfViewer');
+    
+    // Add click event listeners to each PDF button
     pdfButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.stopPropagation(); // Prevent triggering the publication box click
         
-        // Reset page number for new PDF
-        pageNum = 1;
-        
         // Get the PDF file path from the data-pdf attribute
         const pdfPath = button.getAttribute('data-pdf');
         
-        // Show loading spinner
-        loadingSpinner.style.display = 'block';
+        // Clear the previous PDF by setting data to empty first
+        pdfViewer.setAttribute('data', '');
         
-        // Load the PDF
-        pdfjsLib.getDocument(pdfPath).promise.then(function(pdfDoc_) {
-          pdfDoc = pdfDoc_;
-          document.getElementById('page-count').textContent = pdfDoc.numPages;
-          
-          // Render the first page
-          renderPage(pageNum);
+        // Set a timeout to ensure the previous PDF is cleared before loading the new one
+        setTimeout(() => {
+          // Set the PDF directly in the object tag
+          pdfViewer.setAttribute('data', pdfPath);
           
           // Show the modal
           $('#pdfModal').modal('show');
-        }).catch(function(error) {
-          console.error('Error loading PDF:', error);
-          loadingSpinner.style.display = 'none';
-          alert('Error loading PDF. Please try again later.');
-        });
+        }, 100);
       });
     });
     
-    // Reset the canvas when the modal is closed
+    // Clear the PDF viewer when the modal is closed
     $('#pdfModal').on('hidden.bs.modal', function() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      pdfDoc = null;
+      pdfViewer.setAttribute('data', '');
     });
   </script>
 </body>
