@@ -236,8 +236,7 @@
       </div>
     </div>
   </div>
-
- <!-- PDF Viewer Modal -->
+<!-- PDF Viewer Modal -->
 <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
@@ -248,12 +247,11 @@
         </button>
       </div>
       <div class="modal-body p-0" style="height: 75vh;">
-        <!-- Direct browser PDF view - uses the browser's built-in PDF viewer -->
-        <object id="pdfViewer" data="" type="application/pdf" width="100%" height="100%" style="min-height: 75vh;">
-          Your browser does not support embedded PDFs.
-        </object>
+        <!-- Using iframe instead of object for better control -->
+        <iframe id="pdfViewer" src="about:blank" width="100%" height="100%" style="min-height: 75vh; border: none;"></iframe>
       </div>
       <div class="modal-footer">
+        <a id="directPdfLink" href="#" target="_blank" class="btn btn-info">Open in New Tab</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -301,40 +299,45 @@
     });
   </script>
   
-  <!-- Simple script for PDF viewing -->
-  <script>
-    // Get all PDF buttons
-    const pdfButtons = document.querySelectorAll('.btn-pdf');
-    
-    // Get the PDF viewer element
-    const pdfViewer = document.getElementById('pdfViewer');
-    
-    // Add click event listeners to each PDF button
-    pdfButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent triggering the publication box click
+  <!-- Simple script for PDF viewing with iframe -->
+<script>
+  // Get all PDF buttons
+  const pdfButtons = document.querySelectorAll('.btn-pdf');
+  
+  // Get the PDF viewer iframe element
+  const pdfViewer = document.getElementById('pdfViewer');
+  const directPdfLink = document.getElementById('directPdfLink');
+  
+  // Add click event listeners to each PDF button
+  pdfButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent triggering the publication box click
+      
+      // Get the PDF file path from the data-pdf attribute
+      const pdfPath = button.getAttribute('data-pdf');
+      
+      // Update the direct link
+      directPdfLink.setAttribute('href', pdfPath);
+      
+      // Reset the iframe by setting to about:blank first
+      pdfViewer.src = 'about:blank';
+      
+      // Force a reflow
+      void pdfViewer.offsetWidth;
+      
+      // Set a timeout to ensure the iframe is reset before loading the new PDF
+      setTimeout(() => {
+        // Set the PDF in the iframe
+        pdfViewer.src = pdfPath;
         
-        // Get the PDF file path from the data-pdf attribute
-        const pdfPath = button.getAttribute('data-pdf');
-        
-        // Clear the previous PDF by setting data to empty first
-        pdfViewer.setAttribute('data', '');
-        
-        // Set a timeout to ensure the previous PDF is cleared before loading the new one
-        setTimeout(() => {
-          // Set the PDF directly in the object tag
-          pdfViewer.setAttribute('data', pdfPath);
-          
-          // Show the modal
-          $('#pdfModal').modal('show');
-        }, 100);
-      });
+        // Show the modal
+        $('#pdfModal').modal('show');
+      }, 100);
     });
-    
-    // Clear the PDF viewer when the modal is closed
-    $('#pdfModal').on('hidden.bs.modal', function() {
-      pdfViewer.setAttribute('data', '');
-    });
-  </script>
-</body>
-</html>
+  });
+  
+  // Reset the PDF viewer when the modal is closed
+  $('#pdfModal').on('hidden.bs.modal', function() {
+    pdfViewer.src = 'about:blank';
+  });
+</script>
