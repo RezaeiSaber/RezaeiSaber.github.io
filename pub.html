@@ -268,7 +268,7 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
     </div>
   </div>
 
-  <!-- PDF Viewer Modal -->
+ <!-- PDF Viewer Modal -->
 <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
@@ -278,9 +278,11 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <!-- Using iframe with fallback options -->
-        <iframe id="pdfViewer" src="" width="100%" height="600px" frameborder="0"></iframe>
+      <div class="modal-body p-0">
+        <!-- Direct PDF embed with scrollable container -->
+        <div class="pdf-container">
+          <iframe id="pdfViewer" src="" width="100%" height="600px" frameborder="0" style="overflow: auto;"></iframe>
+        </div>
       </div>
       <div class="modal-footer">
         <a id="direct-link" href="" target="_blank" class="btn btn-info">Open in New Tab</a>
@@ -323,17 +325,15 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
       // Update the direct link
       directLink.setAttribute('href', absoluteUrl);
       
-      // Try using Google Docs Viewer (works better for publicly accessible PDFs)
-      // If you're testing locally, this won't work - but the direct link will
-      const googleDocsUrl = "https://docs.google.com/viewer?url=" + encodeURIComponent(absoluteUrl) + "&embedded=true";
-      pdfViewer.setAttribute('src', googleDocsUrl);
+      // Set the PDF directly in the iframe
+      // This will either display it inline or download it, depending on browser settings
+      pdfViewer.setAttribute('src', absoluteUrl);
       
       // Show the modal (using Bootstrap 4 syntax)
       $('#pdfModal').modal('show');
     });
   });
 </script>
-
   <!-- Scripts -->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
