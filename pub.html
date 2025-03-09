@@ -17,6 +17,10 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
   <title>Publications</title>
   <style>
     .publication-box {
@@ -39,6 +43,24 @@
     }
     .btn-pdf {
       margin-top: 10px;
+    }
+    
+    /* PDF.js viewer styles */
+    .pdf-container {
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Loading spinner */
+    .loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: #007bff;
     }
   </style>
 </head>
@@ -154,9 +176,6 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
           <p><strong>Status:</strong> Under Review (2025)</p>
           <p><strong>DOI:</strong> Brain and behavior</p>
         </div>
-
-        <!-- Publication Box 5 -->
-        
       </div>
     </div>
   </div>
@@ -250,28 +269,70 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
   </div>
 
   <!-- PDF Viewer Modal -->
-  <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Using object tag for better browser compatibility -->
-          <object id="pdfViewer" data="" type="application/pdf" width="100%" height="600px">
-            <p>It appears your browser doesn't support embedded PDFs. 
-               You can <a id="pdfDownloadLink" href="" target="_blank">click here to view the PDF</a> instead.</p>
-          </object>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Using iframe with fallback options -->
+        <iframe id="pdfViewer" src="" width="100%" height="600px" frameborder="0"></iframe>
+      </div>
+      <div class="modal-footer">
+        <a id="direct-link" href="" target="_blank" class="btn btn-info">Open in New Tab</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Script for PDF Viewing -->
+<script>
+  // Get all PDF buttons
+  const pdfButtons = document.querySelectorAll('.btn-pdf');
+  
+  // Get the PDF modal elements
+  const pdfViewer = document.getElementById('pdfViewer');
+  const directLink = document.getElementById('direct-link');
+  
+  // Function to get absolute URL from relative path
+  function getAbsoluteUrl(relativePath) {
+    // Get base URL (protocol + hostname + port)
+    const baseUrl = window.location.origin;
+    // Clean relative path (remove leading slash if present)
+    const cleanPath = relativePath.startsWith('/') ? relativePath.substring(1) : relativePath;
+    // Combine to create absolute URL
+    return baseUrl + '/' + cleanPath;
+  }
+  
+  // Add click event listeners to each PDF button
+  pdfButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent triggering the publication box click
+      
+      // Get the PDF file path from the data-pdf attribute
+      const pdfPath = button.getAttribute('data-pdf');
+      
+      // Get the absolute URL for the PDF
+      const absoluteUrl = getAbsoluteUrl(pdfPath);
+      
+      // Update the direct link
+      directLink.setAttribute('href', absoluteUrl);
+      
+      // Try using Google Docs Viewer (works better for publicly accessible PDFs)
+      // If you're testing locally, this won't work - but the direct link will
+      const googleDocsUrl = "https://docs.google.com/viewer?url=" + encodeURIComponent(absoluteUrl) + "&embedded=true";
+      pdfViewer.setAttribute('src', googleDocsUrl);
+      
+      // Show the modal (using Bootstrap 4 syntax)
+      $('#pdfModal').modal('show');
+    });
+  });
+</script>
 
   <!-- Scripts -->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
@@ -285,35 +346,9 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
   <script src="../assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
   <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="../assets/js/topbar-virtual.js"></script>
-
-  <!-- Script for PDF Viewing -->
-  <script>
-    // Get all PDF buttons
-    const pdfButtons = document.querySelectorAll('.btn-pdf');
   
-    // Get the PDF modal elements
-    const pdfViewer = document.getElementById('pdfViewer');
-    const pdfDownloadLink = document.getElementById('pdfDownloadLink');
-  
-    // Add click event listeners to each PDF button
-    pdfButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent triggering the publication box click
-        
-        // Get the PDF file path from the data-pdf attribute
-        const pdfPath = button.getAttribute('data-pdf');
-        
-        // Set the PDF file in the object tag
-        pdfViewer.setAttribute('data', pdfPath);
-        
-        // Also update the fallback link
-        pdfDownloadLink.setAttribute('href', pdfPath);
-        
-        // Show the modal (using Bootstrap 4 syntax)
-        $('#pdfModal').modal('show');
-      });
-    });
-  </script>
+  <!-- PDF.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
   
   <!-- Script for Abstract Modal -->
   <script>
@@ -340,6 +375,134 @@ Optimal wind turbine positioning relies on understanding local wind patterns via
         // Show the modal (using Bootstrap 4 syntax)
         $('#abstractModal').modal('show');
       });
+    });
+  </script>
+  
+  <!-- PDF.js Implementation -->
+  <script>
+    // Set the PDF.js worker source
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
+    
+    // PDF viewer variables
+    let pdfDoc = null,
+        pageNum = 1,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 1.5,
+        canvas = document.getElementById('pdf-render'),
+        ctx = canvas.getContext('2d');
+    
+    // Get the loading spinner
+    const loadingSpinner = document.getElementById('loading-spinner');
+    
+    // Function to render a page
+    function renderPage(num) {
+      pageRendering = true;
+      
+      // Show loading spinner while page renders
+      loadingSpinner.style.display = 'block';
+      
+      // Get the page
+      pdfDoc.getPage(num).then(function(page) {
+        // Get viewport of the page at required scale
+        const viewport = page.getViewport({ scale });
+        
+        // Set canvas height and width to match the page
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        // Render PDF page into canvas context
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        
+        const renderTask = page.render(renderContext);
+        
+        // Wait for rendering to finish
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          
+          // Hide loading spinner once rendering is complete
+          loadingSpinner.style.display = 'none';
+          
+          // If there's a page pending, render it
+          if (pageNumPending !== null) {
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+      
+      // Update page counters
+      document.getElementById('page-num').textContent = num;
+    }
+    
+    // Function to queue a page for rendering
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+    
+    // Show previous page
+    document.getElementById('prev-page').addEventListener('click', function() {
+      if (pageNum <= 1) {
+        return;
+      }
+      pageNum--;
+      queueRenderPage(pageNum);
+    });
+    
+    // Show next page
+    document.getElementById('next-page').addEventListener('click', function() {
+      if (pageNum >= pdfDoc.numPages) {
+        return;
+      }
+      pageNum++;
+      queueRenderPage(pageNum);
+    });
+    
+    // Add click event listeners to each PDF button
+    const pdfButtons = document.querySelectorAll('.btn-pdf');
+    
+    pdfButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent triggering the publication box click
+        
+        // Reset page number for new PDF
+        pageNum = 1;
+        
+        // Get the PDF file path from the data-pdf attribute
+        const pdfPath = button.getAttribute('data-pdf');
+        
+        // Show loading spinner
+        loadingSpinner.style.display = 'block';
+        
+        // Load the PDF
+        pdfjsLib.getDocument(pdfPath).promise.then(function(pdfDoc_) {
+          pdfDoc = pdfDoc_;
+          document.getElementById('page-count').textContent = pdfDoc.numPages;
+          
+          // Render the first page
+          renderPage(pageNum);
+          
+          // Show the modal
+          $('#pdfModal').modal('show');
+        }).catch(function(error) {
+          console.error('Error loading PDF:', error);
+          loadingSpinner.style.display = 'none';
+          alert('Error loading PDF. Please try again later.');
+        });
+      });
+    });
+    
+    // Reset the canvas when the modal is closed
+    $('#pdfModal').on('hidden.bs.modal', function() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pdfDoc = null;
     });
   </script>
 </body>
