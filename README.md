@@ -1,14 +1,30 @@
-# Portfolio Website
+# Saber Rezaei - Personal Academic Website
 
-Welcome to my personal portfolio website! This site showcases my skills, projects, and YouTube videos. It's built with HTML, CSS, and Bootstrap for a modern, responsive layout.
+This repository contains the source code for my personal academic website, showcasing my research publications and professional information.
 
-## Features
+## Website Sections
 
-- **Home Section**: Introduction to who I am, including a brief summary of my skills and experience.
-- **Portfolio Section**: Display of my past projects, including descriptions and links to view more.
-- **YouTube Section**: Embedded YouTube videos showcasing tutorials, demos, or other relevant content.
-- **Contact Section**: Form for visitors to reach out to me directly.
-- **Responsive Design**: The website adapts to any screen size, ensuring a good user experience on desktops, tablets, and smartphones.
+- **Home**: Overview and introduction
+- **About**: Professional background and expertise
+- **Gallery**: Visual content related to my research
+- **Publications**: Academic papers and research publications
+- **YouTube**: Video content related to my work
+- **Contact**: Ways to connect with me
 
+## Technologies Used
 
+- HTML5
+- CSS3 (Bootstrap framework)
+- JavaScript
+- jQuery
+- Various visualization libraries
 
+## Contact Information
+
+- **Email**: Saber.Rezaeiust@gmail.com
+- **LinkedIn**: [https://www.linkedin.com/in/saber-rezaei](https://www.linkedin.com/in/saber-rezaei)
+- **GitHub**: [https://github.com/RezaeiSaber](https://github.com/RezaeiSaber)
+
+---
+
+© 2024 Saber Rezaei. All rights reserved.
