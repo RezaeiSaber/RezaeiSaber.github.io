@@ -57,14 +57,13 @@
   background-color: #f5f5f5; /* Light background while images load */
 }
 
-/* Improve image loading and display */
+/* Improve image loading and display - FIXED: Set opacity to 1 initially */
 .img-place img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
-  opacity: 0; /* Start invisible and fade in when loaded */
-  transition: opacity 0.3s ease, transform 0.4s ease;
+  opacity: 1; /* Changed from 0 to 1 to make images visible immediately */
 }
 
 .img-place:hover img {
@@ -227,12 +226,12 @@
         </p>
       </div>
 
-      <!-- Gallery Images -->
+      <!-- Research Projects -->
+      <h3 class="section-header wow fadeInUp">Research Projects and Events</h3>
       <div class="gridder my-3">
-        <!-- Row 1: Lab and EEG Session -->
-        <div class="grid-item apps wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/me at lab.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Me At INTC Lab</h5> <p>EEG data analysis</p>">
-            <img src="../assets/img/work/me at lab.jpg" alt="">
+            <img src="../assets/img/work/me at lab.jpg" alt="Me at INTC Lab">
             <div class="img-caption">
               <h5 class="fg-theme">Me At INTC Lab</h5>
               <p>EEG data analysis</p>
@@ -240,9 +239,9 @@
           </div>
         </div>
 
-        <div class="grid-item template wireframes wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/my subject.jpg" data-fancybox data-caption="<h5 class='fg-theme'>EEG Recording Session</h5> <p>The subject is resting and waiting to drink water.</p>">
-            <img src="../assets/img/work/my subject.jpg" alt="">
+            <img src="../assets/img/work/my subject.jpg" alt="EEG Recording Session">
             <div class="img-caption">
               <h5 class="fg-theme">EEG Recording Session</h5>
               <p>The Subject</p>
@@ -250,9 +249,9 @@
           </div>
         </div>
 
-        <div class="grid-item graphic ui-ux wireframes wow zoomIn">
-          <div class="img-place" data-src="../assets/img/work/fes/functions.JPG" data-fancybox data-caption="<h5 class='fg-theme'>Python Event</h5> <p>Paragrasp Device with Corresponding Hand Gestures</p>">
-            <img src="../assets/img/work/fes/functions.JPG" alt="">
+        <div class="grid-item wow fadeIn">
+          <div class="img-place" data-src="../assets/img/work/fes/functions.JPG" data-fancybox data-caption="<h5 class='fg-theme'>Paragrasp Device</h5> <p>Paragrasp Device with Corresponding Hand Gestures</p>">
+            <img src="../assets/img/work/fes/functions.JPG" alt="Paragrasp Device">
             <div class="img-caption">
               <h5 class="fg-theme">Paragrasp</h5>
               <p>Paragrasp Device with Corresponding Hand Gestures</p>
@@ -260,10 +259,9 @@
           </div>
         </div>
 
-        <!-- Row 2: FNIRS Task and Brain Mapping Lab -->
-        <div class="grid-item apps ios wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/me as subject fnirs.jpg" data-fancybox data-caption="<h5 class='fg-theme'>At national brain mapping laboratory</h5> <p>Me As Subject for FNIRS Task</p>">
-            <img src="../assets/img/work/me as subject fnirs.jpg" alt="">
+            <img src="../assets/img/work/me as subject fnirs.jpg" alt="FNIRS Task">
             <div class="img-caption">
               <h5 class="fg-theme">Me As Subject</h5>
               <p>At national brain mapping laboratory</p>
@@ -271,9 +269,9 @@
           </div>
         </div>
 
-        <div class="grid-item graphic ui-ux wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/national brain mapping lab.jpg" data-fancybox data-caption="<h5 class='fg-theme'>National Brain Mapping Laboratory</h5> <p></p>">
-            <img src="../assets/img/work/national brain mapping lab.jpg" alt="">
+            <img src="../assets/img/work/national brain mapping lab.jpg" alt="Brain Mapping Lab">
             <div class="img-caption">
               <h5 class="fg-theme">National Brain Mapping Laboratory</h5>
               <p></p>
@@ -281,20 +279,19 @@
           </div>
         </div>
 
-        <!-- Row 3: FES Demo and Python Event -->
-        <div class="grid-item apps ios wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/demonstrating hand gesture fes.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Demonstration of Hand Gesture FES System</h5> <p>Demonstration of the FES system by our team to a high-ranking national official</p>">
-            <img src="../assets/img/work/demonstrating hand gesture fes.jpg" alt="">
+            <img src="../assets/img/work/demonstrating hand gesture fes.jpg" alt="FES System Demo">
             <div class="img-caption">
               <h5 class="fg-theme">Demonstration of Hand Gesture FES System</h5>
-              <p>Demonstration of the FES system by our team to a high-ranking national official</p>
+              <p>Demonstration of the FES system by our team</p>
             </div>
           </div>
         </div>
 
-        <div class="grid-item graphic ui-ux wireframes wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/python event.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Python Event</h5> <p>Presentation of the case study by our team</p>">
-            <img src="../assets/img/work/python event.jpg" alt="">
+            <img src="../assets/img/work/python event.jpg" alt="Python Event">
             <div class="img-caption">
               <h5 class="fg-theme">Python Event</h5>
               <p>Presentation of the case study by our team</p>
@@ -302,10 +299,9 @@
           </div>
         </div>
 
-        <!-- Row 4: Additional Python Event -->
-        <div class="grid-item graphic ui-ux wireframes wow zoomIn">
+        <div class="grid-item wow fadeIn">
           <div class="img-place" data-src="../assets/img/work/python event2.jpg" data-fancybox data-caption="<h5 class='fg-theme'>Python Event</h5> <p>A programming event featuring discussions and problem-solving on critical thinking and new perspectives.</p>">
-            <img src="../assets/img/work/python event2.jpg" alt="">
+            <img src="../assets/img/work/python event2.jpg" alt="Python Event 2">
             <div class="img-caption">
               <h5 class="fg-theme">Python Event</h5>
               <p>A programming event featuring discussions</p>
@@ -313,8 +309,6 @@
           </div>
         </div>
       </div>
-
-
       <!-- Volunteer and Charity Work Header -->
       <div class="text-center wow fadeInUp mt-5">
         <div class="badge badge-subhead" style="font-size: 25px; font-weight: bold;">Volunteer and Charity Work</div>
@@ -723,9 +717,20 @@
       
       // No need for Isotope initialization since we're using CSS Grid
       
-      // Make sure images are loaded properly
-      $('.grid-item img').on('load', function() {
+      // FIXED: Initialize all images to be visible, even if they don't trigger load event
+      $('.grid-item img').each(function() {
         $(this).css('opacity', 1);
+        
+        // Still maintain the load event for any images that happen to load later
+        $(this).on('load', function() {
+          $(this).css('opacity', 1);
+        });
+        
+        // Add error handling to show placeholder if image fails to load
+        $(this).on('error', function() {
+          $(this).attr('src', '../assets/img/placeholder.jpg'); // Create a placeholder image in this directory
+          $(this).css('opacity', 1);
+        });
       });
       
       // Initialize FancyBox for image viewing
@@ -743,7 +748,7 @@
         protect: true
       });
     });
-  </script>
+    </script>
 </body>
 </html>
 
