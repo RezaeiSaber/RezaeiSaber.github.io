@@ -24,6 +24,8 @@ This repository contains the source code for my personal academic website, showc
 - **Email**: Saber.Rezaeiust@gmail.com
 - **LinkedIn**: [https://www.linkedin.com/in/saber-rezaei](https://www.linkedin.com/in/saber-rezaei)
 - **GitHub**: [https://github.com/RezaeiSaber](https://github.com/RezaeiSaber)
+- **Google Scholar**: [https://scholar.google.com/citations?user=xGl9XeUAAAAJ&hl=en](https://scholar.google.com/citations?user=xGl9XeUAAAAJ&hl=en)
+  
 
 ---
 
