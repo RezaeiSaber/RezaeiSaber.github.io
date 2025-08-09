@@ -11,13 +11,6 @@ This repository contains the source code for my personal academic website, showc
 - **YouTube**: Video content related to my work
 - **Contact**: Ways to connect with me
 
-## Technologies Used
-
-- HTML5
-- CSS3 (Bootstrap framework)
-- JavaScript
-- jQuery
-- Various visualization libraries
 
 ## Contact Information
 
