@@ -117,11 +117,15 @@ a:hover {
 .section {
   padding: var(--space-2xl) 0;
   scroll-margin-top: 70px; /* Account for fixed header - reduced from 90px */
+  position: relative;
+  z-index: 1;
 }
 
 .section-sm {
   padding: var(--space-xl) 0;
   scroll-margin-top: 70px; /* Account for fixed header - reduced from 90px */
+  position: relative;
+  z-index: 1;
 }
 
 /* Grid System */
@@ -220,18 +224,36 @@ a:hover {
 /* Hero Section */
 .hero {
   min-height: 100vh;
+  max-height: 100vh; /* Prevent hero from extending beyond viewport */
   padding-top: 70px;
-  padding-bottom: 50px;
+  padding-bottom: 0;
   display: flex;
   align-items: center;
   position: relative;
   background: linear-gradient(135deg, var(--gray-50) 0%, #ffffff 100%);
   scroll-margin-top: 0; /* Hero doesn't need offset */
+  overflow: hidden; /* Prevent any overflow */
 }
 
-/* About section specific styling */
-#about {
+/* Background section specific styling */
+#background {
   scroll-margin-top: 70px;
+  position: relative;
+  z-index: 1;
+  min-height: auto;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+/* Ensure sections are properly separated */
+#experience {
+  position: relative;
+  z-index: 1;
+}
+
+#research {
   position: relative;
   z-index: 1;
 }

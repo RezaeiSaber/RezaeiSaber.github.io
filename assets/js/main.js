@@ -55,7 +55,7 @@ class PortfolioApp {
     const headerHeight = document.querySelector('.header').offsetHeight;
     
     let current = '';
-    const scrollPosition = window.scrollY + headerHeight + 50; // Reduced offset
+    const scrollPosition = window.scrollY + headerHeight + 50;
     
     // Check if we're at the very top
     if (window.scrollY < 100) {
@@ -67,11 +67,13 @@ class PortfolioApp {
         
         // Special handling for hero section
         if (section.id === 'home') {
-          if (scrollPosition < sectionTop + sectionHeight - 100) {
+          if (scrollPosition < sectionTop + sectionHeight - 200) {
             current = 'home';
           }
         } else {
-          if (scrollPosition >= sectionTop - 50 && scrollPosition < sectionTop + sectionHeight - 50) {
+          // Improved boundary detection for other sections
+          const sectionBottom = sectionTop + sectionHeight;
+          if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionBottom - 100) {
             current = section.getAttribute('id');
           }
         }
@@ -101,12 +103,12 @@ class PortfolioApp {
           if (this.getAttribute('href') === '#home') {
             targetPosition = 0;
           } else {
-            // Improved calculation for other sections
-            targetPosition = target.offsetTop - headerHeight - 10;
+            // Improved calculation for other sections with better spacing
+            targetPosition = target.offsetTop - headerHeight - 20;
           }
           
           window.scrollTo({
-            top: targetPosition,
+            top: Math.max(0, targetPosition), // Ensure we don't scroll to negative position
             behavior: 'smooth'
           });
         }
